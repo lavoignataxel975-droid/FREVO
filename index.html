@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <include src="head"></include>
+  <title>FREVO, restaurant gastronomique, Paris 3e</title>
+  <meta name="description" content="FREVO, table de dix-huit couverts face à une cuisine ouverte dans le Haut-Marais. Menu en sept temps, du mardi au samedi.">
+  <link rel="preload" as="image" href="/img/counter-1852.webp" imagesrcset="{{srcset:counter}}" imagesizes="100vw">
+  <script type="module" src="/src/js/page-home.js"></script>
+</head>
+<body data-page="home">
+  <include src="header"></include>
+
+  <main id="contenu">
+    <!-- ============ Hero ============ -->
+    <section class="hero" data-hero>
+      <picture class="hero__media">
+        {{img:counter|100vw|La salle de FREVO : le comptoir en noyer et ses tabourets face à la cuisine ouverte||eager}}
+      </picture>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__content wrap">
+        <p class="hero__lead">Cuisine d’auteur<br>Haut-Marais, Paris</p>
+        <h1 class="hero__word wordmark" aria-label="FREVO">
+          <span aria-hidden="true">F</span><span aria-hidden="true">R</span><span aria-hidden="true">E</span><span aria-hidden="true">V</span><span aria-hidden="true">O</span>
+        </h1>
+        <a class="hero__down" href="#entree" aria-label="Descendre vers la suite">
+          <span class="hero__down-line" aria-hidden="true"></span>
+          {{icon:arrow-down}}
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ Entrée : réserver / menu ============ -->
+    <section class="entry wrap" id="entree">
+      <div class="entry__intro" data-reveal="rise">
+        <p class="lead">Dix-huit couverts autour d’une cuisine ouverte. Un menu en sept temps, qui change avec les saisons.</p>
+        <p class="entry__hours">Du mardi au samedi, à partir de 19&nbsp;h</p>
+      </div>
+
+      <div class="entry__rows">
+        <button class="entry__row" type="button" data-reserve data-reveal="rise">
+          <span class="entry__bg ph" aria-hidden="true">{{img:banquette|(min-width: 900px) 70vw, 100vw||}}</span>
+          <span class="entry__k">Une table pour ce soir</span>
+          <span class="entry__t">Réserver</span>
+          <span class="entry__arrow" aria-hidden="true">{{icon:arrow-up-right}}</span>
+        </button>
+        <a class="entry__row" href="/menu" data-reveal="rise" style="--d: 0.08s">
+          <span class="entry__bg ph" aria-hidden="true">{{img:asparagus|(min-width: 900px) 70vw, 100vw||}}</span>
+          <span class="entry__k">Sept temps, 165&nbsp;€</span>
+          <span class="entry__t">Le menu</span>
+          <span class="entry__arrow" aria-hidden="true">{{icon:arrow-up-right}}</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ Manifeste + chef ============ -->
+    <section class="manifesto section">
+      <div class="wrap manifesto__grid">
+        <h2 class="manifesto__text lines" data-reveal="lines">
+          <span><span style="--i:0">Le soir new-yorkais,</span></span>
+          <span><span style="--i:1">la précision française.</span></span>
+          <span><span style="--i:2" class="manifesto__soft">Une table tournée vers le feu,</span></span>
+          <span><span style="--i:3" class="manifesto__soft">dans une salle qui ressemble</span></span>
+          <span><span style="--i:4" class="manifesto__soft">à une galerie.</span></span>
+        </h2>
+
+        <figure class="manifesto__chef">
+          <div class="ph" data-reveal="clip">{{img:chef|(min-width: 900px) 24vw, 62vw|Le chef Ilan Moreau, assis sur le passe de la cuisine}}</div>
+          <figcaption>Ilan Moreau, chef et fondateur</figcaption>
+        </figure>
+
+        <p class="manifesto__bio body" data-reveal="rise">Ilan Moreau a passé dix ans dans les cuisines de New York, de Tribeca au Lower East Side, avant d’ouvrir FREVO en 2023. Il en a rapporté une énergie et le goût des dîners qui finissent tard. Les recettes, il les écrit ici.</p>
+      </div>
+    </section>
+
+    <!-- ============ La cuisine : composition superposée ============ -->
+    <section class="kitchen section">
+      <div class="wrap kitchen__grid">
+        <div class="kitchen__main ph" data-reveal="clip">{{img:plate-green|(min-width: 900px) 46vw, 100vw|Velouté vert vif, radis, pensées et huile d’herbes dans une assiette en grès}}</div>
+
+        <div class="kitchen__text">
+          <h2 class="h2 lines" data-reveal="lines">
+            <span><span style="--i:0">La sauce</span></span>
+            <span><span style="--i:1">d’abord.</span></span>
+          </h2>
+          <p class="body" data-reveal="rise" style="--d:0.15s">Chaque assiette part d’un produit, d’un producteur, et d’une sauce travaillée pendant des heures. Jus, beurres montés, émulsions&nbsp;: c’est elle qui donne le ton, le reste suit.</p>
+          <p class="body" data-reveal="rise" style="--d:0.25s">Peu d’ingrédients, beaucoup d’attention. Le menu change chaque saison, au rythme des maraîchers d’Île-de-France et des pêcheurs de Saint-Malo.</p>
+        </div>
+
+        <figure class="kitchen__side">
+          <div class="ph" data-reveal="clip" style="--d:0.2s">{{img:brigade|(min-width: 900px) 34vw, 86vw|La brigade de dos, en plein service devant les étagères d’assiettes}}</div>
+          <figcaption>Une brigade de six, une cuisine ouverte sur la salle.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Plein cadre : le comptoir ============ -->
+    <section class="bleed" aria-labelledby="bleed-t">
+      <div class="bleed__media ph parallax">{{img:brigade|100vw|La brigade en plein service, de dos, devant les étagères d’assiettes}}</div>
+      <div class="bleed__shade" aria-hidden="true"></div>
+      <div class="bleed__text wrap">
+        <h2 class="h2 lines" id="bleed-t" data-reveal="lines">
+          <span><span style="--i:0">Dix-huit places</span></span>
+          <span><span style="--i:1">face au feu.</span></span>
+        </h2>
+        <p class="body" data-reveal="rise" style="--d:0.2s">Au comptoir, on voit tout&nbsp;: le passe, les gestes, la dernière goutte de sauce. Rien n’est caché, tout se joue à un mètre de vous.</p>
+      </div>
+    </section>
+
+    <!-- ============ Le lieu ============ -->
+    <section class="place section">
+      <div class="wrap place__grid">
+        <div class="place__text">
+          <h2 class="h2 lines" data-reveal="lines">
+            <span><span style="--i:0">Une salle,</span></span>
+            <span><span style="--i:1">une galerie.</span></span>
+          </h2>
+          <p class="body" data-reveal="rise" style="--d:0.15s">Noyer, cuir fauve, velours sombre et lumière basse. Chaque saison, un artiste invité prend les murs&nbsp;: ses toiles restent le temps du menu, puis cèdent la place.</p>
+          <a class="link" href="/events" data-reveal="rise" style="--d:0.25s">Privatiser la salle {{icon:arrow-right}}</a>
+        </div>
+        <div class="place__art ph" data-reveal="clip">{{img:gallery|(min-width: 900px) 52vw, 100vw|Portrait peint encadré au-dessus d’une banquette en cuir et d’une table en noyer}}</div>
+        <div class="place__detail ph" data-reveal="clip" style="--d:0.15s">{{img:banquette|(min-width: 900px) 20vw, 46vw|Banquette en cuir, table ronde et seau à champagne en bois}}</div>
+      </div>
+    </section>
+
+    <!-- ============ La saison : défilement accompagné ============ -->
+    <section class="season section" aria-labelledby="season-t">
+      <div class="wrap season__grid">
+        <div class="season__aside">
+          <h2 class="h2" id="season-t" data-reveal="rise">Cet automne</h2>
+          <ol class="season__list" data-season-list>
+            <li class="is-on" data-season-name="0"><span class="h3">Saint-Jacques</span><span class="season__d">Sabayon au safran, agrumes confits, cresson</span></li>
+            <li data-season-name="1"><span class="h3">Asperge blanche</span><span class="season__d">Brûlée au beurre noisette, caviar osciètre, fleur de courgette</span></li>
+            <li data-season-name="2"><span class="h3">Fraise des bois</span><span class="season__d">Rhubarbe pochée, crème crue, sorbet à l’oseille</span></li>
+          </ol>
+          <a class="link" href="/menu">Le menu complet {{icon:arrow-right}}</a>
+        </div>
+
+        <div class="season__pics">
+          <figure class="season__pic season__pic--tall ph" data-season-pic="0">{{img:plate-amber|(min-width: 900px) 42vw, 100vw|Saint-Jacques en sabayon jaune safran dans une assiette grise, sur velours orange}}</figure>
+          <figure class="season__pic season__pic--wide ph" data-season-pic="1">{{img:asparagus|(min-width: 900px) 52vw, 100vw|Asperge blanche brûlée, caviar et fleurs de courgette sur un plat noir}}</figure>
+          <figure class="season__pic season__pic--crop ph" data-season-pic="2">{{img:plate-red|(min-width: 900px) 46vw, 100vw|Dessert aux fraises sur un plat laqué rouge, posé sur un velours pourpre}}</figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Clôture ============ -->
+    <section class="closing section" aria-labelledby="closing-t">
+      <div class="wrap closing__inner">
+        <h2 class="closing__t wordmark lines" id="closing-t" data-reveal="lines">
+          <span><span style="--i:0">À ce</span></span>
+          <span><span style="--i:1">soir.</span></span>
+        </h2>
+        <div class="closing__side" data-reveal="rise" style="--d:0.2s">
+          <p class="body">Les tables s’ouvrent six semaines à l’avance, chaque mardi à midi. Une question, une allergie, une occasion à fêter&nbsp;? Dites-le nous en réservant.</p>
+          <button class="btn btn--accent" type="button" data-reserve>Réserver une table</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footer"></include>
+  <include src="reserve"></include>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "frevo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5210 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 5211",
+    "images": "node scripts/images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@phosphor-icons/core": "^2.1.1"
+  }
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <include src="head"></include>
+  <title>Events, FREVO</title>
+  <meta name="description" content="Privatisation, comptoir privé, dîners d’entreprise, lancements et célébrations chez FREVO, jusqu’à 48 convives assis.">
+  <link rel="preload" as="image" href="/img/brigade-1812.webp" imagesrcset="{{srcset:brigade}}" imagesizes="100vw">
+  <script type="module" src="/src/js/page-events.js"></script>
+</head>
+<body data-page="events">
+  <include src="header"></include>
+
+  <main id="contenu">
+    <section class="phero phero--events" data-page-hero>
+      <div class="phero__media">{{img:brigade|100vw|La brigade de FREVO en plein service, devant les étagères d’assiettes||eager}}</div>
+      <div class="phero__shade" aria-hidden="true"></div>
+      <div class="phero__content wrap">
+        <h1 class="phero__title wordmark" style="--fit:4.4"><span>Events</span></h1>
+        <p class="phero__lead">Le restaurant entier, ou seulement le comptoir. Pour un soir, à votre façon.</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="ev-intro wrap">
+      <p class="ev-intro__text lines" data-reveal="lines">
+        <span><span style="--i:0">Nous fermons les portes,</span></span>
+        <span><span style="--i:1">la cuisine reste ouverte.</span></span>
+      </p>
+      <div class="ev-intro__facts">
+        <dl>
+          <div data-reveal="rise"><dt>Assis</dt><dd>48</dd></div>
+          <div data-reveal="rise" style="--d:0.08s"><dt>Cocktail</dt><dd>70</dd></div>
+          <div data-reveal="rise" style="--d:0.16s"><dt>Au comptoir</dt><dd>18</dd></div>
+        </dl>
+        <p class="body" data-reveal="rise" style="--d:0.2s">Du déjeuner d’affaires au dîner de lancement, chaque événement a son menu, écrit avec le chef, et son accord, composé par notre sommelière Clémence Aubry.</p>
+      </div>
+    </section>
+
+    <!-- Formats : liste interactive, la photo suit le survol -->
+    <section class="formats section" aria-labelledby="formats-t">
+      <div class="wrap formats__grid">
+        <div class="formats__media" aria-hidden="true">
+          <figure class="formats__pic is-on ph" data-fpic="0">{{img:gallery|(min-width: 900px) 38vw, 100vw||}}</figure>
+          <figure class="formats__pic ph" data-fpic="1">{{img:counter|(min-width: 900px) 38vw, 100vw||}}</figure>
+          <figure class="formats__pic ph" data-fpic="2">{{img:banquette|(min-width: 900px) 38vw, 100vw||}}</figure>
+          <figure class="formats__pic ph" data-fpic="3">{{img:plate-red|(min-width: 900px) 38vw, 100vw||}}</figure>
+          <figure class="formats__pic ph" data-fpic="4">{{img:plate-amber|(min-width: 900px) 38vw, 100vw||}}</figure>
+          <figure class="formats__pic ph" data-fpic="5">{{img:brigade|(min-width: 900px) 38vw, 100vw||}}</figure>
+        </div>
+
+        <div class="formats__list">
+          <h2 class="h2" id="formats-t" data-reveal="rise">Six façons de recevoir</h2>
+          <ul class="fmt" data-formats>
+            <li class="fmt__item is-open" data-fmt="0">
+              <button class="fmt__head" type="button" aria-expanded="true" aria-controls="fmt-0"><span class="fmt__t">Privatisation complète</span><span class="fmt__cap">Jusqu’à 48 convives</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-0"><p>La salle, le comptoir et la galerie pour vous seuls. Menu sur mesure, accord dédié, plan de table et musique choisis ensemble.</p></div>
+            </li>
+            <li class="fmt__item" data-fmt="1">
+              <button class="fmt__head" type="button" aria-expanded="false" aria-controls="fmt-1"><span class="fmt__t">Le comptoir privé</span><span class="fmt__cap">12 à 18 convives</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-1"><p>Dix-huit places face à la cuisine ouverte. Le chef présente chaque assiette au moment où elle quitte le passe.</p></div>
+            </li>
+            <li class="fmt__item" data-fmt="2">
+              <button class="fmt__head" type="button" aria-expanded="false" aria-controls="fmt-2"><span class="fmt__t">Dîners d’entreprise</span><span class="fmt__cap">10 à 48 convives</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-2"><p>Dîners clients, comités de direction, fins de séminaire. Écran et micro discrets sur demande, facturation simplifiée.</p></div>
+            </li>
+            <li class="fmt__item" data-fmt="3">
+              <button class="fmt__head" type="button" aria-expanded="false" aria-controls="fmt-3"><span class="fmt__t">Lancements et presse</span><span class="fmt__cap">Jusqu’à 70 en cocktail</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-3"><p>Présentations de collection, dîners presse, collaborations de marque. Bouchées signatures, bar dédié, scénographie lumière.</p></div>
+            </li>
+            <li class="fmt__item" data-fmt="4">
+              <button class="fmt__head" type="button" aria-expanded="false" aria-controls="fmt-4"><span class="fmt__t">Célébrations</span><span class="fmt__cap">8 à 48 convives</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-4"><p>Anniversaires, fiançailles, dîners de famille. Un gâteau dessiné par notre cheffe pâtissière et une table dressée pour l’occasion.</p></div>
+            </li>
+            <li class="fmt__item" data-fmt="5">
+              <button class="fmt__head" type="button" aria-expanded="false" aria-controls="fmt-5"><span class="fmt__t">La table du chef</span><span class="fmt__cap">2 à 6 convives</span><span class="fmt__sign" aria-hidden="true"></span></button>
+              <div class="fmt__body" id="fmt-5"><p>Une table installée en cuisine, au cœur du service. Un menu improvisé selon le marché du jour, servi par la brigade.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Respiration visuelle -->
+    <section class="ev-pair" aria-label="La salle">
+      <figure class="ev-pair__a ph parallax">{{img:banquette|(min-width: 900px) 42vw, 70vw|Banquette en cuir et seau à champagne en bois sous une lumière basse}}</figure>
+      <figure class="ev-pair__b ph" data-reveal="clip">{{img:plate-green|(min-width: 900px) 30vw, 56vw|Velouté vert et fleurs comestibles dans une assiette en grès}}</figure>
+      <p class="ev-pair__t h3" data-reveal="rise">Un menu écrit pour vous, jamais repris tel quel.</p>
+    </section>
+
+    <!-- Déroulé -->
+    <section class="process section" aria-labelledby="process-t">
+      <div class="wrap">
+        <h2 class="h2" id="process-t" data-reveal="rise">Comment ça se passe</h2>
+        <ol class="process__list">
+          <li data-reveal="rise"><span class="process__v">Écrire</span><p class="body">Une date, un nombre de convives, une envie. Nous répondons sous quarante-huit heures avec nos disponibilités.</p></li>
+          <li data-reveal="rise" style="--d:0.1s"><span class="process__v">Composer</span><p class="body">Rendez-vous au restaurant ou en visio avec le chef et la sommelière. Dégustation possible pour les groupes de plus de vingt.</p></li>
+          <li data-reveal="rise" style="--d:0.2s"><span class="process__v">Recevoir</span><p class="body">Le soir venu, une équipe dédiée vous accueille. Vous n’avez rien d’autre à faire que profiter de vos invités.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ev-cta" aria-labelledby="ev-cta-t">
+      <div class="ev-cta__media ph">{{img:gallery|100vw||}}</div>
+      <div class="ev-cta__shade" aria-hidden="true"></div>
+      <div class="wrap ev-cta__inner">
+        <h2 class="ev-cta__t wordmark lines" id="ev-cta-t" data-reveal="lines">
+          <span><span style="--i:0">Votre</span></span>
+          <span><span style="--i:1">soirée.</span></span>
+        </h2>
+        <div class="ev-cta__side" data-reveal="rise" style="--d:0.2s">
+          <p class="body">Parlez-nous de votre projet : date, nombre d’invités, budget indicatif. Nous revenons vers vous sous quarante-huit heures.</p>
+          <a class="btn btn--accent" href="/contact?objet=evenement#formulaire">Organiser un événement</a>
+          <p class="ev-cta__alt">Ou par téléphone, au <a href="tel:+33199004712">01&nbsp;99&nbsp;00&nbsp;47&nbsp;12</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footer"></include>
+  <include src="reserve"></include>
+</body>
+</html>

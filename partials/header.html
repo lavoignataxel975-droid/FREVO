@@ -1,0 +1,38 @@
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="hdr" data-header>
+  <div class="hdr__inner">
+    <a class="hdr__brand wordmark" href="/" aria-label="FREVO, accueil">FREVO</a>
+    <div class="hdr__actions">
+      <button class="btn btn--accent hdr__book" type="button" data-reserve>Réserver</button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir la navigation" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation plein écran : liens à gauche, photo qui change au survol à droite -->
+<div class="nav" id="nav" data-nav hidden>
+  <div class="nav__media" aria-hidden="true">
+    <figure class="nav__pic is-on" data-nav-pic="home">{{img:counter|50vw||}}</figure>
+    <figure class="nav__pic" data-nav-pic="menu">{{img:gallery|50vw||}}</figure>
+    <figure class="nav__pic" data-nav-pic="events">{{img:brigade|50vw||}}</figure>
+    <figure class="nav__pic" data-nav-pic="contact">{{img:banquette|50vw||}}</figure>
+  </div>
+  <div class="nav__body">
+    <nav aria-label="Navigation principale">
+      <ol class="nav__list">
+        <li><a href="/" data-nav-link="home"><span class="nav__t">Accueil</span></a></li>
+        <li><a href="/menu" data-nav-link="menu"><span class="nav__t">Menu</span></a></li>
+        <li><a href="/events" data-nav-link="events"><span class="nav__t">Events</span></a></li>
+        <li><a href="/contact" data-nav-link="contact"><span class="nav__t">Contact</span></a></li>
+      </ol>
+    </nav>
+    <div class="nav__foot">
+      <p>12 rue des Lanternes<br>75003 Paris</p>
+      <p>Mardi au samedi<br>19 h à 23 h</p>
+      <p><a href="tel:+33199004712">01 99 00 47 12</a><br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+</div>

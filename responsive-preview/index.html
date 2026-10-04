@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <include src="head"></include>
+  <meta name="robots" content="noindex, nofollow">
+  <title>FREVO, prévisualisation responsive</title>
+  <script type="module" src="/src/js/page-preview.js"></script>
+</head>
+<body class="pv" data-page="preview">
+  <!-- Outil interne de test : ne fait pas partie du site public (non lié, non indexé) -->
+  <header class="pv__bar">
+    <p class="pv__brand"><span class="wordmark">FREVO</span><span>Prévisualisation responsive</span></p>
+
+    <nav class="pv__pages" aria-label="Ouvrir une page dans les deux appareils">
+      <button type="button" data-goto="/" aria-pressed="true">Accueil</button>
+      <button type="button" data-goto="/menu">Menu</button>
+      <button type="button" data-goto="/events">Events</button>
+      <button type="button" data-goto="/contact">Contact</button>
+      <button type="button" data-goto="/#reserver">Réservation</button>
+    </nav>
+
+    <div class="pv__tools">
+      <button type="button" class="pv__tool" data-rotate aria-pressed="false">{{icon:device-rotate}}<span>Tablette paysage</span></button>
+      <button type="button" class="pv__tool" data-reload-all>{{icon:arrow-clockwise}}<span>Recharger</span></button>
+    </div>
+  </header>
+
+  <main class="pv__stage" data-stage>
+    <!-- iPhone 16 : écran 393 × 852 points -->
+    <section class="pv__device" aria-label="iPhone 16">
+      <div class="pv__frame" data-frame="phone">
+        <div class="phone">
+          <span class="phone__btn phone__btn--action" aria-hidden="true"></span>
+          <span class="phone__btn phone__btn--up" aria-hidden="true"></span>
+          <span class="phone__btn phone__btn--down" aria-hidden="true"></span>
+          <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
+          <span class="phone__btn phone__btn--camera" aria-hidden="true"></span>
+          <div class="phone__screen">
+            <div class="status status--phone" aria-hidden="true">
+              <span class="status__time" data-clock>9:41</span>
+              <span class="phone__island"></span>
+              <span class="status__icons">{{iconf:cell-signal-full}}{{iconf:wifi-high}}{{iconf:battery-full}}</span>
+            </div>
+            <iframe class="pv__view" src="/" title="FREVO sur iPhone 16" data-view="phone"></iframe>
+            <span class="phone__home" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <p class="pv__meta"><strong>iPhone 16</strong><span>393 × 852</span><span class="pv__path" data-path="phone">/</span></p>
+    </section>
+
+    <!-- Tablette : iPad Air 11 pouces, écran 820 × 1180 points -->
+    <section class="pv__device" aria-label="Tablette">
+      <div class="pv__frame" data-frame="tablet">
+        <div class="tablet" data-tablet>
+          <span class="tablet__cam" aria-hidden="true"></span>
+          <div class="tablet__screen">
+            <div class="status status--tablet" aria-hidden="true">
+              <span class="status__time" data-clock-long>9:41</span>
+              <span class="status__icons">{{iconf:wifi-high}}<span class="status__pct">100 %</span>{{iconf:battery-full}}</span>
+            </div>
+            <iframe class="pv__view" src="/" title="FREVO sur tablette" data-view="tablet"></iframe>
+            <span class="tablet__home" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <p class="pv__meta"><strong>iPad Air 11"</strong><span data-tablet-size>820 × 1180</span><span class="pv__path" data-path="tablet">/</span></p>
+    </section>
+  </main>
+</body>
+</html>

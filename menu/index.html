@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <include src="head"></include>
+  <title>Menu, FREVO</title>
+  <meta name="description" content="Le menu de FREVO : menu dégustation en sept temps, entrées, plats, desserts et carte des vins.">
+  <link rel="preload" as="image" href="/img/gallery-1811.webp" imagesrcset="{{srcset:gallery}}" imagesizes="100vw">
+  <script type="module" src="/src/js/page-menu.js"></script>
+</head>
+<body data-page="menu">
+  <include src="header"></include>
+
+  <main id="contenu">
+    <section class="phero phero--menu" data-page-hero>
+      <div class="phero__media">{{img:gallery|100vw|La salle de FREVO : banquette en cuir, table en noyer et portrait peint au mur||eager}}</div>
+      <div class="phero__shade" aria-hidden="true"></div>
+      <div class="phero__content wrap">
+        <h1 class="phero__title wordmark" style="--fit:3.3"><span>Menu</span></h1>
+        <p class="phero__lead">Une carte courte, réécrite à chaque saison. Ce qui arrive le matin décide du soir.</p>
+      </div>
+    </section>
+
+    <!-- Menu dégustation -->
+    <section class="tasting wrap" aria-labelledby="tasting-t">
+      <h2 class="visually-hidden" id="tasting-t">Menu dégustation</h2>
+      <div class="tasting__main" data-reveal="rise">
+        <p class="tasting__k">Menu dégustation</p>
+        <p class="tasting__n"><span>Sept temps</span><span class="tasting__price">165&nbsp;€</span></p>
+      </div>
+      <dl class="tasting__opts">
+        <div data-reveal="rise" style="--d:0.08s"><dt>Accord mets et vins</dt><dd>110&nbsp;€</dd></div>
+        <div data-reveal="rise" style="--d:0.16s"><dt>Accord sans alcool</dt><dd>65&nbsp;€</dd></div>
+        <div data-reveal="rise" style="--d:0.24s"><dt>Déjeuner du samedi, quatre temps</dt><dd>85&nbsp;€</dd></div>
+      </dl>
+      <p class="tasting__note body" data-reveal="rise">Le menu dégustation est servi à toute la table. La carte ci-dessous est proposée en salle comme au comptoir. Prix nets, service compris.</p>
+    </section>
+
+    <!-- Carte : catégories interactives -->
+    <section class="carte" aria-label="La carte">
+      <div class="carte__bar" data-carte-bar>
+        <div class="wrap">
+          <div class="carte__tabs" role="tablist" aria-label="Catégories du menu">
+            <button role="tab" id="tab-entrees" aria-controls="cat-entrees" aria-selected="true" data-tab="entrees">Entrées</button>
+            <button role="tab" id="tab-plats" aria-controls="cat-plats" aria-selected="false" tabindex="-1" data-tab="plats">Plats</button>
+            <button role="tab" id="tab-desserts" aria-controls="cat-desserts" aria-selected="false" tabindex="-1" data-tab="desserts">Desserts</button>
+            <button role="tab" id="tab-vins" aria-controls="cat-vins" aria-selected="false" tabindex="-1" data-tab="vins">Vins</button>
+            <span class="carte__ink" aria-hidden="true" data-ink></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap carte__grid">
+        <div class="carte__media" aria-hidden="true">
+          <figure class="carte__pic is-on ph" data-pic="entrees">{{img:plate-green|(min-width: 900px) 36vw, 100vw||}}</figure>
+          <figure class="carte__pic ph" data-pic="plats">{{img:plate-amber|(min-width: 900px) 36vw, 100vw||}}</figure>
+          <figure class="carte__pic ph" data-pic="desserts">{{img:plate-red|(min-width: 900px) 36vw, 100vw||carte__crop}}</figure>
+          <figure class="carte__pic ph" data-pic="vins">{{img:banquette|(min-width: 900px) 36vw, 100vw||}}</figure>
+        </div>
+
+        <div class="carte__panels">
+          <div class="carte__panel is-on" role="tabpanel" id="cat-entrees" aria-labelledby="tab-entrees" tabindex="0" data-panel="entrees">
+            <ol class="dishes">
+              <li class="dish"><h3 class="dish__name">Asperge blanche des Landes</h3><p class="dish__desc">Brûlée au beurre noisette, caviar osciètre, fleur de courgette</p><p class="dish__price">38</p></li>
+              <li class="dish"><h3 class="dish__name">Velouté de petits pois</h3><p class="dish__desc">Radis glacés, pensées, huile de livèche</p><p class="dish__price">26</p></li>
+              <li class="dish"><h3 class="dish__name">Bar de ligne cru</h3><p class="dish__desc">Pomme verte, kombu, crème fumée au foin</p><p class="dish__price">32</p></li>
+              <li class="dish"><h3 class="dish__name">Œuf fermier</h3><p class="dish__desc">Cuit à soixante-quatre degrés, jus de cèpes, noisette torréfiée</p><p class="dish__price">24</p></li>
+              <li class="dish"><h3 class="dish__name">Langoustine rôtie</h3><p class="dish__desc">Bisque montée au beurre, citron caviar</p><p class="dish__price">42</p></li>
+            </ol>
+          </div>
+
+          <div class="carte__panel" role="tabpanel" id="cat-plats" aria-labelledby="tab-plats" tabindex="0" data-panel="plats" hidden>
+            <ol class="dishes">
+              <li class="dish"><h3 class="dish__name">Saint-Jacques de Saint-Malo</h3><p class="dish__desc">Sabayon au safran, agrumes confits, cresson</p><p class="dish__price">48</p></li>
+              <li class="dish"><h3 class="dish__name">Turbot sauvage</h3><p class="dish__desc">Beurre blanc au vin jaune, poireaux brûlés</p><p class="dish__price">58</p></li>
+              <li class="dish"><h3 class="dish__name">Pigeon de Racan</h3><p class="dish__desc">Rôti sur l’os, betterave fumée, jus au cacao</p><p class="dish__price">54</p></li>
+              <li class="dish"><h3 class="dish__name">Bœuf de Galice</h3><p class="dish__desc">Cuit au charbon de bois, échalote confite, sauce bordelaise</p><p class="dish__price">72</p></li>
+              <li class="dish"><h3 class="dish__name">Céleri en croûte de sel</h3><p class="dish__desc">Truffe noire, parmesan affiné trente-six mois</p><p class="dish__price">44</p></li>
+            </ol>
+          </div>
+
+          <div class="carte__panel" role="tabpanel" id="cat-desserts" aria-labelledby="tab-desserts" tabindex="0" data-panel="desserts" hidden>
+            <ol class="dishes">
+              <li class="dish"><h3 class="dish__name">Fraise des bois</h3><p class="dish__desc">Rhubarbe pochée, crème crue, sorbet à l’oseille</p><p class="dish__price">19</p></li>
+              <li class="dish"><h3 class="dish__name">Chocolat grand cru</h3><p class="dish__desc">Praliné au sarrasin, glace au lait fumé</p><p class="dish__price">21</p></li>
+              <li class="dish"><h3 class="dish__name">Poire Williams</h3><p class="dish__desc">Pochée au poivre de Timut, sablé breton</p><p class="dish__price">18</p></li>
+              <li class="dish"><h3 class="dish__name">Fromages affinés</h3><p class="dish__desc">Trois pâtes choisies chaque semaine, pain de seigle au miel</p><p class="dish__price">22</p></li>
+            </ol>
+          </div>
+
+          <div class="carte__panel" role="tabpanel" id="cat-vins" aria-labelledby="tab-vins" tabindex="0" data-panel="vins" hidden>
+            <div class="wines">
+              <div class="wines__group">
+                <h3 class="wines__h">Champagnes</h3>
+                <ol class="dishes dishes--wine">
+                  <li class="dish"><p class="dish__name">Brut nature, Montagne de Reims</p><p class="dish__desc">Pinot noir et chardonnay, dosage zéro</p><p class="dish__price"><span>22</span><span>128</span></p></li>
+                  <li class="dish"><p class="dish__name">Blanc de blancs, Côte des Blancs 2015</p><p class="dish__desc">Chardonnay, élevage long sur lattes</p><p class="dish__price"><span>28</span><span>165</span></p></li>
+                </ol>
+              </div>
+              <div class="wines__group">
+                <h3 class="wines__h">Blancs</h3>
+                <ol class="dishes dishes--wine">
+                  <li class="dish"><p class="dish__name">Chablis premier cru 2021</p><p class="dish__desc">Bourgogne, chardonnay sur sols kimméridgiens</p><p class="dish__price"><span>18</span><span>96</span></p></li>
+                  <li class="dish"><p class="dish__name">Savagnin ouillé 2019</p><p class="dish__desc">Côtes du Jura, notes de noix et de curry doux</p><p class="dish__price"><span>19</span><span>102</span></p></li>
+                  <li class="dish"><p class="dish__name">Chenin, Savennières 2020</p><p class="dish__desc">Anjou, minéral et ample</p><p class="dish__price"><span>16</span><span>84</span></p></li>
+                </ol>
+              </div>
+              <div class="wines__group">
+                <h3 class="wines__h">Rouges</h3>
+                <ol class="dishes dishes--wine">
+                  <li class="dish"><p class="dish__name">Pinot noir, Côte de Nuits 2020</p><p class="dish__desc">Bourgogne, fruit rouge et sous-bois</p><p class="dish__price"><span>21</span><span>118</span></p></li>
+                  <li class="dish"><p class="dish__name">Syrah, Saint-Joseph 2021</p><p class="dish__desc">Rhône nord, poivre et violette</p><p class="dish__price"><span>17</span><span>88</span></p></li>
+                  <li class="dish"><p class="dish__name">Mourvèdre, Bandol 2017</p><p class="dish__desc">Provence, garrigue et cuir, à carafer</p><p class="dish__price"><span></span><span>134</span></p></li>
+                </ol>
+              </div>
+              <div class="wines__group">
+                <h3 class="wines__h">Sans alcool</h3>
+                <ol class="dishes dishes--wine">
+                  <li class="dish"><p class="dish__name">Kombucha de verveine</p><p class="dish__desc">Fermenté à la maison, peu sucré</p><p class="dish__price"><span>9</span><span></span></p></li>
+                  <li class="dish"><p class="dish__name">Infusion froide sureau et poire</p><p class="dish__desc">Servie au verre à vin</p><p class="dish__price"><span>8</span><span></span></p></li>
+                </ol>
+              </div>
+              <p class="wines__legend">Prix au verre (12&nbsp;cl) et à la bouteille, en euros.</p>
+            </div>
+          </div>
+
+          <p class="carte__note">Prix en euros, service compris. Allergies et régimes particuliers&nbsp;: signalez-les en réservant, la cuisine adapte la plupart des assiettes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos avant le footer -->
+    <section class="mcoll section" aria-label="La cuisine en images">
+      <div class="wrap mcoll__grid">
+        <figure class="mcoll__a ph" data-reveal="clip">{{img:brigade|(min-width: 900px) 58vw, 100vw|La brigade en plein service, en noir et blanc}}</figure>
+        <figure class="mcoll__b ph" data-reveal="clip" style="--d:0.12s">{{img:chef|(min-width: 900px) 28vw, 60vw|Le chef Ilan Moreau dans sa cuisine}}</figure>
+        <p class="mcoll__q" data-reveal="rise">«&nbsp;Je cuisine ce que j’ai envie de manger à vingt-deux heures, après le service.&nbsp;»<span>Ilan Moreau, chef</span></p>
+      </div>
+    </section>
+  </main>
+
+  <include src="footer"></include>
+  <include src="reserve"></include>
+</body>
+</html>

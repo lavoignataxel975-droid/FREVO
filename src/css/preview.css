@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Prévisualisation responsive : un iPhone 16 et une tablette, côte à côte.
+   Les appareils sont dessinés à leur taille réelle en points, puis réduits
+   ensemble (--s) pour tenir dans la fenêtre.
+   ========================================================================== */
+
+.pv { height: 100dvh; overflow: hidden; display: grid; grid-template-rows: auto 1fr; background: radial-gradient(90% 70% at 50% 60%, #1a1716, var(--bg) 70%); }
+.pv::after { display: none; } /* pas de grain par-dessus les écrans */
+
+.pv__bar {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
+  padding: 14px clamp(16px, 2.4vw, 32px);
+  border-bottom: 1px solid var(--line);
+}
+.pv__brand { display: flex; align-items: baseline; gap: 14px; font-size: var(--fs-sm); color: var(--muted); white-space: nowrap; }
+.pv__brand .wordmark { font-size: 1.35rem; color: var(--fg); line-height: 1; }
+.pv__pages { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line); }
+.pv__pages button, .pv__tool {
+  min-height: 36px; padding: 0 14px;
+  font-size: var(--fs-xs); font-weight: 600; font-variation-settings: 'wdth' 90; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-2); transition: background-color 0.3s, color 0.3s;
+}
+.pv__pages button:hover, .pv__tool:hover { color: var(--fg); }
+.pv__pages button[aria-pressed='true'] { background: var(--fg); color: var(--bg); }
+.pv__tools { justify-self: end; display: flex; gap: 6px; }
+.pv__tool { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); }
+.pv__tool .icon { width: 16px; height: 16px; }
+.pv__tool[aria-pressed='true'] { border-color: var(--fg); color: var(--fg); }
+
+.pv__stage { min-height: 0; display: flex; align-items: center; justify-content: center; gap: clamp(32px, 5vw, 96px); padding: 24px; }
+.pv__device { display: grid; justify-items: center; gap: 16px; }
+.pv__frame { position: relative; width: calc(var(--w) * var(--s, 0.6) * 1px); height: calc(var(--h) * var(--s, 0.6) * 1px); transition: width 0.6s var(--ease), height 0.6s var(--ease); }
+.pv__frame > * { position: absolute; left: 0; top: 0; transform: scale(var(--s, 0.6)); transform-origin: 0 0; transition: transform 0.6s var(--ease); }
+.pv__meta { display: flex; gap: 12px; align-items: baseline; font-size: var(--fs-xs); color: var(--muted); letter-spacing: 0.04em; }
+.pv__meta strong { color: var(--fg); font-weight: 600; font-size: var(--fs-sm); }
+.pv__path { padding: 2px 8px; border: 1px solid var(--line); color: var(--fg-2); font-variant-numeric: tabular-nums; }
+
+.pv__view { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; border: 0; background: var(--bg); }
+
+/* Barre d'état (texte système, comme sur l'appareil) */
+.status { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-items: center; justify-content: space-between; color: #fff; background: #000; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif; font-weight: 600; pointer-events: none; }
+.status__icons { display: flex; align-items: center; gap: 6px; }
+.status .icon { width: 18px; height: 18px; }
+
+/* ---------- iPhone 16 ---------- */
+[data-frame='phone'] { --w: 433; --h: 892; }
+.phone {
+  width: 433px; height: 892px; padding: 20px;
+  border-radius: 72px;
+  background: linear-gradient(145deg, #4a4b50, #26272b 30%, #1c1d20 60%, #3b3c41);
+  box-shadow: inset 0 0 0 2px #5c5e64, inset 0 0 0 6px #121214, 0 60px 120px -40px rgb(0 0 0 / 0.9), 0 0 0 1px rgb(255 255 255 / 0.04);
+}
+.phone__btn { position: absolute; width: 4px; background: linear-gradient(90deg, #2c2d31, #55575d); border-radius: 2px; }
+.phone__btn--action { left: -3px; top: 170px; height: 34px; }
+.phone__btn--up { left: -3px; top: 232px; height: 64px; }
+.phone__btn--down { left: -3px; top: 310px; height: 64px; }
+.phone__btn--power { right: -3px; top: 250px; height: 100px; background: linear-gradient(270deg, #2c2d31, #55575d); }
+.phone__btn--camera { right: -3px; top: 470px; height: 70px; background: linear-gradient(270deg, #2c2d31, #55575d); }
+.phone__screen { position: relative; width: 393px; height: 852px; border-radius: 54px; overflow: hidden; background: #000; isolation: isolate; }
+.status--phone { height: 54px; padding: 0 30px 0 50px; font-size: 17px; }
+.status--phone .status__icons { gap: 7px; }
+.status--phone .icon { width: 19px; height: 19px; }
+.phone__island { position: absolute; left: 50%; top: 11px; width: 125px; height: 37px; margin-left: -62.5px; border-radius: 20px; background: #000; box-shadow: inset 0 0 0 1px #111; }
+.phone__island::after { content: ''; position: absolute; right: 16px; top: 12px; width: 13px; height: 13px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2b3a5c, #0a0d16 60%); }
+[data-view='phone'] { top: 54px; height: 798px; }
+.phone__home { position: absolute; left: 50%; bottom: 8px; z-index: 3; width: 140px; height: 5px; margin-left: -70px; border-radius: 3px; background: rgb(255 255 255 / 0.78); pointer-events: none; mix-blend-mode: difference; }
+
+/* ---------- Tablette (iPad Air 11") ---------- */
+[data-frame='tablet'] { --w: 868; --h: 1228; }
+[data-frame='tablet'].is-landscape { --w: 1228; --h: 868; }
+.tablet {
+  width: 868px; height: 1228px; padding: 24px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #3d3e43, #222326 40%, #303136);
+  box-shadow: inset 0 0 0 2px #55575d, inset 0 0 0 5px #0c0c0e, 0 60px 120px -40px rgb(0 0 0 / 0.9);
+}
+.tablet__cam { position: absolute; left: 50%; top: 10px; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2b3a5c, #08090c 65%); }
+.tablet__screen { position: relative; width: 820px; height: 1180px; border-radius: 18px; overflow: hidden; background: #000; }
+.status--tablet { height: 24px; padding: 0 22px; font-size: 13px; }
+.status__pct { font-size: 12px; }
+.status--tablet .icon { width: 15px; height: 15px; }
+[data-view='tablet'] { top: 24px; height: 1156px; }
+.tablet__home { position: absolute; left: 50%; bottom: 7px; z-index: 3; width: 200px; height: 5px; margin-left: -100px; border-radius: 3px; background: rgb(255 255 255 / 0.78); pointer-events: none; mix-blend-mode: difference; }
+
+.tablet.is-landscape { width: 1228px; height: 868px; }
+.tablet.is-landscape .tablet__cam { left: auto; right: 10px; top: 50%; margin: -3.5px 0 0; }
+.tablet.is-landscape .tablet__screen { width: 1180px; height: 820px; }
+.tablet.is-landscape [data-view='tablet'] { height: 796px; }
+
+@media (max-width: 900px) {
+  .pv__bar { grid-template-columns: 1fr; justify-items: start; }
+  .pv__tools { justify-self: start; }
+  .pv__pages { flex-wrap: wrap; }
+  .pv__stage { flex-direction: column; overflow-y: auto; justify-content: start; }
+  .pv { overflow: auto; height: auto; min-height: 100dvh; }
+}

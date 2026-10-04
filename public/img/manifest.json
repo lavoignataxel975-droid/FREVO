@@ -1,0 +1,93 @@
+{
+  "plate-red": {
+    "width": 1920,
+    "height": 820,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "plate-green": {
+    "width": 916,
+    "height": 1633,
+    "widths": [
+      480,
+      800,
+      916
+    ]
+  },
+  "banquette": {
+    "width": 916,
+    "height": 1633,
+    "widths": [
+      480,
+      800,
+      916
+    ]
+  },
+  "counter": {
+    "width": 1852,
+    "height": 1233,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      1852
+    ]
+  },
+  "chef": {
+    "width": 916,
+    "height": 1318,
+    "widths": [
+      480,
+      800,
+      916
+    ]
+  },
+  "plate-amber": {
+    "width": 916,
+    "height": 1318,
+    "widths": [
+      480,
+      800,
+      916
+    ]
+  },
+  "asparagus": {
+    "width": 1801,
+    "height": 915,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      1801
+    ]
+  },
+  "gallery": {
+    "width": 1811,
+    "height": 1630,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      1811
+    ]
+  },
+  "brigade": {
+    "width": 1812,
+    "height": 1125,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600,
+      1812
+    ]
+  }
+}

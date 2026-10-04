@@ -1,0 +1,97 @@
+<!-- Réservation : panneau plein écran, cinq temps. Démonstration locale, aucune donnée envoyée. -->
+<div class="rsv" id="reserver" role="dialog" aria-modal="true" aria-labelledby="rsv-title" data-rsv hidden>
+  <div class="rsv__media" aria-hidden="true">
+    {{img:banquette|(min-width: 1000px) 40vw, 0px||}}
+  </div>
+
+  <div class="rsv__panel">
+    <div class="rsv__top">
+      <p class="rsv__title" id="rsv-title">Réserver une table</p>
+      <button class="rsv__close" type="button" aria-label="Fermer la réservation" data-rsv-close>{{icon:x}}</button>
+    </div>
+
+    <ol class="rsv__steps" aria-label="Étapes de la réservation">
+      <li data-rsv-tab="0"><span>Date</span></li>
+      <li data-rsv-tab="1"><span>Convives</span></li>
+      <li data-rsv-tab="2"><span>Heure</span></li>
+      <li data-rsv-tab="3"><span>Coordonnées</span></li>
+      <li data-rsv-tab="4"><span>Confirmation</span></li>
+    </ol>
+    <p class="rsv__summary" data-rsv-summary aria-live="polite"></p>
+
+    <form class="rsv__stage" data-rsv-form novalidate>
+      <!-- 1. Date -->
+      <section class="rsv__step is-on" data-rsv-step="0" aria-labelledby="rsv-h0">
+        <h2 class="rsv__h" id="rsv-h0" tabindex="-1">Quel soir&nbsp;?</h2>
+        <p class="rsv__hint">Nous servons le dîner du mardi au samedi. Réservations ouvertes six semaines à l’avance.</p>
+        <div class="cal">
+          <div class="cal__head">
+            <button type="button" class="cal__nav" data-cal-prev aria-label="Mois précédent">{{icon:arrow-left}}</button>
+            <p class="cal__month" data-cal-month aria-live="polite"></p>
+            <button type="button" class="cal__nav" data-cal-next aria-label="Mois suivant">{{icon:arrow-right}}</button>
+          </div>
+          <div class="cal__dow" aria-hidden="true"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+          <div class="cal__grid" data-cal-grid role="grid" aria-label="Choisir une date"></div>
+        </div>
+      </section>
+
+      <!-- 2. Convives -->
+      <section class="rsv__step" data-rsv-step="1" aria-labelledby="rsv-h1">
+        <h2 class="rsv__h" id="rsv-h1" tabindex="-1">Combien serez-vous&nbsp;?</h2>
+        <p class="rsv__hint">Au-delà de huit convives, nous composons la soirée avec vous : <a href="/events">voir les événements</a>.</p>
+        <div class="pick pick--guests" data-guests role="radiogroup" aria-label="Nombre de convives"></div>
+      </section>
+
+      <!-- 3. Heure -->
+      <section class="rsv__step" data-rsv-step="2" aria-labelledby="rsv-h2">
+        <h2 class="rsv__h" id="rsv-h2" tabindex="-1">À quelle heure&nbsp;?</h2>
+        <p class="rsv__hint">Le menu se déroule sur environ deux heures trente. Les créneaux grisés sont complets.</p>
+        <div class="pick pick--times" data-times role="radiogroup" aria-label="Heure d’arrivée"></div>
+      </section>
+
+      <!-- 4. Coordonnées -->
+      <section class="rsv__step" data-rsv-step="3" aria-labelledby="rsv-h3">
+        <h2 class="rsv__h" id="rsv-h3" tabindex="-1">À quel nom&nbsp;?</h2>
+        <div class="fields">
+          <div class="field">
+            <label for="rsv-first">Prénom</label>
+            <input id="rsv-first" name="first" autocomplete="given-name" required>
+            <p class="field__err" data-err-for="first"></p>
+          </div>
+          <div class="field">
+            <label for="rsv-last">Nom</label>
+            <input id="rsv-last" name="last" autocomplete="family-name" required>
+            <p class="field__err" data-err-for="last"></p>
+          </div>
+          <div class="field">
+            <label for="rsv-email">Email</label>
+            <input id="rsv-email" name="email" type="email" inputmode="email" autocomplete="email" required>
+            <p class="field__err" data-err-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="rsv-tel">Téléphone</label>
+            <input id="rsv-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required>
+            <p class="field__err" data-err-for="tel"></p>
+          </div>
+          <div class="field field--wide">
+            <label for="rsv-note">Allergies, occasion particulière <span class="field__opt">(facultatif)</span></label>
+            <textarea id="rsv-note" name="note" rows="3"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Confirmation -->
+      <section class="rsv__step rsv__done" data-rsv-step="4" aria-labelledby="rsv-h4">
+        <h2 class="rsv__h" id="rsv-h4" tabindex="-1">Votre table vous attend.</h2>
+        <dl class="rsv__recap" data-rsv-recap></dl>
+        <p class="rsv__hint">Une confirmation vous a été envoyée par email. Pour toute modification, appelez-nous au <a href="tel:+33199004712">01&nbsp;99&nbsp;00&nbsp;47&nbsp;12</a>.</p>
+        <p class="rsv__demo">Démonstration : aucune réservation n’a été transmise.</p>
+      </section>
+
+      <div class="rsv__foot">
+        <button class="btn btn--ghost" type="button" data-rsv-back>Retour</button>
+        <button class="btn btn--accent" type="button" data-rsv-next>Continuer</button>
+      </div>
+    </form>
+  </div>
+</div>
